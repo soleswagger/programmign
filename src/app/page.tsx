@@ -1,36 +1,28 @@
 import Link from "next/link";
 
+const mockUrls = [
+  "https://utfs.io/f/887d212f-4b7e-48e4-8199-62d6c35294ab-m8ejwc.jpg",
+  "https://utfs.io/f/af947834-a017-485a-92dc-5559f3561f50-1ody.jpg",
+  "https://utfs.io/f/f25a3bb2-dcc8-42e3-84b7-c49eb4d5bb03-1ody.jpg",
+  "https://utfs.io/f/6654e8d7-a785-4d52-b5c2-219d74fb22f6-1ody.jpg",
+  "https://utfs.io/f/c9b476b8-75f2-4285-ab60-f8258a718347-nm33wo.jpg",
+  "https://utfs.io/f/11b2aac1-3b9f-4c0a-b5ac-7cc7e962fc51-2us.jpg"
+]
+
+const mockImages = mockUrls.map((url, index)=> ({
+  id:index +1,
+  url,
+}));
+
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-        <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-          Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
-        </h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/usage/first-steps"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">First Steps →</h3>
-            <div className="text-lg">
-              Just the basics - Everything you need to know to set up your
-              database and authentication.
+    <main className="">
+      <div className="brightness-200 " >
+        {mockImages.map((image) => (
+          <div key={image.id} className="w-48">
+            <img src={image.url} />
             </div>
-          </Link>
-          <Link
-            className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-            href="https://create.t3.gg/en/introduction"
-            target="_blank"
-          >
-            <h3 className="text-2xl font-bold">Documentation →</h3>
-            <div className="text-lg">
-              Learn more about Create T3 App, the libraries it uses, and how to
-              deploy it.
-            </div>
-          </Link>
-        </div>
+        ))}
       </div>
     </main>
   );
