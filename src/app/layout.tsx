@@ -17,6 +17,17 @@ export default function RootLayout({
       <body className={`${GeistSans.variable}`}>
         <div className="text-9xl text-pink-400	">First Layout</div>
         <button className="btn">Button</button>
+        <div className="card bg-base-100 w-96 shadow-xl">
+  <div className="card-body">
+    <h2 className="card-title">Burgers!</h2>
+    <p>Murphy</p>
+  </div>
+  <figure>
+    <img
+      src="https://th.bing.com/th/id/OIP.brbkjV_mD6X_jyNQkt7TtwHaEK?rs=1&pid=ImgDetMain"
+      alt="The Murph" />
+  </figure>
+</div>
       {children}
       </body>
     </html>
