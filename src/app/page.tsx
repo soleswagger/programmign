@@ -21,9 +21,10 @@ export default async function HomePage() {
     <main className="">
       <div className="flex flex-wrap gap-4 brightness-200 ">
         {images.map((image) => (
-          <div key={image.id} className="w-48">
+          <div key={image.id} className="w-48 text-green-300	hover:animate-spin">
             <img src={image.url} />
            <div>{image.name}</div>
+           <div>{image.createdAt.toString()}</div>
             </div>
             
         ))}
