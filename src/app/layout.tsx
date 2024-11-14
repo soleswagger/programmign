@@ -20,9 +20,9 @@ export default function RootLayout({
         <SignedOut>
           <SignInButton />
         </SignedOut>
-        <SignedIn>
-        <UploadThingButton/>
-
+        <SignedIn> <div className="text-emerald-200">
+        <UploadThingButton  />
+        </div>
           <UserButton />
         </SignedIn>
         {children}

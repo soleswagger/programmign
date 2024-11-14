@@ -6,7 +6,7 @@ export default function UploadThingButton() {
   const router = useRouter();
   return (
     
-      <UploadButton
+      <UploadButton className="text-blue-200 font-family: Apple Color Emoji"
         endpoint="imageUploader"
         onClientUploadComplete={(res) => {
           // Do something with the response
