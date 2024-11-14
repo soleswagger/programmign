@@ -22,13 +22,36 @@ export default async function HomePage() {
       <div className="flex flex-wrap gap-4 brightness-200 ">
         {images.map((image) => (
           <div key={image.id} className="w-48 text-green-300	hover:animate-spin">
+            <div className="card bg-base-100 w-75 shadow-xl">
+  <figure>
+    <img
+      src={image.url} />
+  </figure>
+  <div className="card-body">
+    <h2 className="card-title">
+      !</h2>
+    <p></p>
+    <div>{image.createdAt.toString()}</div>
+    <div className="card-actions justify-end">
+ 
+    </div>
+  </div>
+</div>
             <img src={image.url} />
            <div>{image.name}</div>
            <div>{image.createdAt.toString()}</div>
             </div>
+
+
             
         ))}
       </div>
     </main>
   );
 }
+
+
+/*    <div className="badge badge-outline">Fashion</div>
+      <div className="badge badge-outline">Products</div>
+      <div className="badge badge-secondary">NEW</div>*/
+      
