@@ -20,7 +20,7 @@ export const ourFileRouter = {
       const user =  auth();
 
       // If you throw, the user will not be able to upload
-      if (!(await user).userId) throw new UploadThingError("Unauthorized");
+      if (!(await user).userId) throw new Error("Unauthorized");
 
       // Whatever is returned here is accessible in onUploadComplete as `metadata`
       return { userId: (await user).userId };
@@ -31,9 +31,9 @@ export const ourFileRouter = {
 
       console.log("file url", file.url);
       await db.insert(images).values({
-        name:file.name,
-        url:file.url,
-        userId:metadata.userId,
+        name:String(file.name),
+        url:String(file.url),
+        userId:String(metadata.userId),
       })
 
 
