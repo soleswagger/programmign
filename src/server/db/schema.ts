@@ -19,6 +19,7 @@ import {
 export const createTable = pgTableCreator((name) => `p1projectreacttc_${name}`);
 
 export const images = createTable(
+  //this should be "image"
   "images",
   {
     id: serial("id").primaryKey(),

@@ -11,9 +11,7 @@ type Image= {
 }
 export async function getMyImages(): Promise<Image[] | null> {
     const user = await auth();
-
     if (!user.userId){
-        const user = await auth();
         if(!user.userId) {
             throw new Error("Unaurthorized");
         };
@@ -21,9 +19,9 @@ export async function getMyImages(): Promise<Image[] | null> {
     }
 
 
-    const images = await db.query.images.findMany({
-        where: (model, {eq}) => eq(model.userId, user.userId),
-        orderBy: (model, {desc}) => desc(model.id),
-    });
-    return images;
+const images = await db.query.images.findMany({
+    where: (model, {eq}) => eq(model.userId, user.userId),
+    orderBy: (model, {desc}) => desc(model.id),
+});
+return images;
 }
